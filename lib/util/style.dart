@@ -26,6 +26,15 @@ var safeAreaGreen = SystemChrome.setSystemUIOverlayStyle(
   ),
 );
 
+var safeAreaGreenBottom = SystemChrome.setSystemUIOverlayStyle(
+  SystemUiOverlayStyle.light.copyWith(
+    statusBarColor: colorGreen,
+    statusBarBrightness: Brightness.dark,
+    statusBarIconBrightness: Brightness.dark,
+    systemNavigationBarIconBrightness: Brightness.dark,
+    systemNavigationBarColor: colorGreenTrans,
+  ),
+);
 var textBtn = TextStyle(color: colorGreen, fontSize: 20);
 
 var textBtnLight = TextStyle(color: colorWhite, fontSize: 20);

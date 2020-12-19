@@ -16,7 +16,9 @@ import '../view/shoppe_condetion.dart';
 import '../view/shoppe_contact_us.dart';
 import '../view/shoppe_home_page.dart';
 import '../view/shoppe_mesaage_page.dart';
+import '../view/shoppe_product_page.dart';
 import '../view/shoppe_profile_edit_page.dart';
+import '../view/shoppe_store_page.dart';
 import '../view/shoppe_user_registration.dart';
 import '../view/store_registration_page.dart';
 
@@ -31,6 +33,8 @@ class Routes {
   static const String shoppeAboutUs = '/shoppe-about-us';
   static const String shoppeTermsConditions = '/shoppe-terms-conditions';
   static const String shoppeMessagePage = '/shoppe-message-page';
+  static const String shoppeStorePage = '/shoppe-store-page';
+  static const String shoppeProductPage = '/shoppe-product-page';
   static const all = <String>{
     introPage,
     shoppeClintPage,
@@ -42,6 +46,8 @@ class Routes {
     shoppeAboutUs,
     shoppeTermsConditions,
     shoppeMessagePage,
+    shoppeStorePage,
+    shoppeProductPage,
   };
 }
 
@@ -59,6 +65,8 @@ class CustomRouter extends RouterBase {
     RouteDef(Routes.shoppeAboutUs, page: ShoppeAboutUs),
     RouteDef(Routes.shoppeTermsConditions, page: ShoppeTermsConditions),
     RouteDef(Routes.shoppeMessagePage, page: ShoppeMessagePage),
+    RouteDef(Routes.shoppeStorePage, page: ShoppeStorePage),
+    RouteDef(Routes.shoppeProductPage, page: ShoppeProductPage),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -120,6 +128,18 @@ class CustomRouter extends RouterBase {
     ShoppeMessagePage: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => ShoppeMessagePage(),
+        settings: data,
+      );
+    },
+    ShoppeStorePage: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => ShoppeStorePage(),
+        settings: data,
+      );
+    },
+    ShoppeProductPage: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => ShoppeProductPage(),
         settings: data,
       );
     },

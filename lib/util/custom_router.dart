@@ -7,7 +7,9 @@ import 'package:shoppe_app/view/shoppe_condetion.dart';
 import 'package:shoppe_app/view/shoppe_contact_us.dart';
 import 'package:shoppe_app/view/shoppe_home_page.dart';
 import 'package:shoppe_app/view/shoppe_mesaage_page.dart';
+import 'package:shoppe_app/view/shoppe_product_page.dart';
 import 'package:shoppe_app/view/shoppe_profile_edit_page.dart';
+import 'package:shoppe_app/view/shoppe_store_page.dart';
 import 'package:shoppe_app/view/shoppe_user_registration.dart';
 import 'package:shoppe_app/view/store_registration_page.dart';
 
@@ -24,6 +26,8 @@ import 'package:shoppe_app/view/store_registration_page.dart';
     MaterialRoute(page: ShoppeAboutUs,),
     MaterialRoute(page: ShoppeTermsConditions,),
     MaterialRoute(page: ShoppeMessagePage,),
+    MaterialRoute(page: ShoppeStorePage,),
+    MaterialRoute(page: ShoppeProductPage,),
   ],
 )
 class $CustomRouter{}
