@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="564.488" height="337.184" viewBox="0 0 564.488 337.184">
+  <g id="wave" transform="translate(-0.5 -643)">
+    <path id="wave_bg" data-name="wave bg" d="M0,38.064S82.559-25.366,145.828,44.2s120.648,110.582,177.453,58.578S431-20.483,512.793,5.54s-5.586,244.438-5.586,244.438L16.145,246.716Z" transform="translate(14.5 643)" fill="#fff" opacity="0.1"/>
+    <path id="wave_bg-2" data-name="wave bg" d="M0,81.817S87.137-37.167,207.4,16.884s230,73.574,283.426,14.773-9.219,169.859-9.219,169.859L30.492,190.907Z" transform="translate(32.5 679)" fill="#fff" opacity="0.1"/>
+    <path id="wave_bg-3" data-name="wave bg" d="M0,113.984s85.621,5.352,152.66-23.406S225.656,0,272.68,0s52.258,102.43,163.434,120.578,74.648-11.852,116.176,14.887S516,319.184,516,319.184L25.8,291.125Z" transform="translate(0.5 661)" fill="#fff" opacity="0.1"/>
+    <path id="wave_bg-4" data-name="wave bg" d="M0,38.064S82.559-25.366,145.828,44.2s120.648,110.582,177.453,58.578S431-20.483,512.793,5.54s-5.586,244.438-5.586,244.438L16.145,246.716Z" transform="translate(14.5 643)" fill="#fff" opacity="0"/>
+    <path id="wave_bg-5" data-name="wave bg" d="M0,81.817S87.137-37.167,207.4,16.884s230,73.574,283.426,14.773-9.219,169.859-9.219,169.859L30.492,190.907Z" transform="translate(32.5 679)" fill="#fff" opacity="0"/>
+    <path id="wave_bg-6" data-name="wave bg" d="M0,113.984s85.621,5.352,152.66-23.406S225.656,0,272.68,0s52.258,102.43,163.434,120.578,74.648-11.852,116.176,14.887S516,319.184,516,319.184L25.8,291.125Z" transform="translate(0.5 661)" fill="#fff" opacity="0"/>
+  </g>
+</svg>
