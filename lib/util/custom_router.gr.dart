@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import '../view/intro_view.dart';
 import '../view/shoppe_aboute_use.dart';
+import '../view/shoppe_add_new_adds.dart';
+import '../view/shoppe_chat_page.dart';
 import '../view/shoppe_clinte.dart';
 import '../view/shoppe_condetion.dart';
 import '../view/shoppe_contact_us.dart';
@@ -18,6 +20,7 @@ import '../view/shoppe_home_page.dart';
 import '../view/shoppe_mesaage_page.dart';
 import '../view/shoppe_product_page.dart';
 import '../view/shoppe_profile_edit_page.dart';
+import '../view/shoppe_prouduct_details.dart';
 import '../view/shoppe_store_page.dart';
 import '../view/shoppe_user_registration.dart';
 import '../view/store_registration_page.dart';
@@ -35,6 +38,9 @@ class Routes {
   static const String shoppeMessagePage = '/shoppe-message-page';
   static const String shoppeStorePage = '/shoppe-store-page';
   static const String shoppeProductPage = '/shoppe-product-page';
+  static const String shoppeProductDetails = '/shoppe-product-details';
+  static const String shoppeChatPage = '/shoppe-chat-page';
+  static const String shoppeAddNewAdds = '/shoppe-add-new-adds';
   static const all = <String>{
     introPage,
     shoppeClintPage,
@@ -48,6 +54,9 @@ class Routes {
     shoppeMessagePage,
     shoppeStorePage,
     shoppeProductPage,
+    shoppeProductDetails,
+    shoppeChatPage,
+    shoppeAddNewAdds,
   };
 }
 
@@ -67,6 +76,9 @@ class CustomRouter extends RouterBase {
     RouteDef(Routes.shoppeMessagePage, page: ShoppeMessagePage),
     RouteDef(Routes.shoppeStorePage, page: ShoppeStorePage),
     RouteDef(Routes.shoppeProductPage, page: ShoppeProductPage),
+    RouteDef(Routes.shoppeProductDetails, page: ShoppeProductDetails),
+    RouteDef(Routes.shoppeChatPage, page: ShoppeChatPage),
+    RouteDef(Routes.shoppeAddNewAdds, page: ShoppeAddNewAdds),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -140,6 +152,24 @@ class CustomRouter extends RouterBase {
     ShoppeProductPage: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => ShoppeProductPage(),
+        settings: data,
+      );
+    },
+    ShoppeProductDetails: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => ShoppeProductDetails(),
+        settings: data,
+      );
+    },
+    ShoppeChatPage: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => ShoppeChatPage(),
+        settings: data,
+      );
+    },
+    ShoppeAddNewAdds: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => ShoppeAddNewAdds(),
         settings: data,
       );
     },

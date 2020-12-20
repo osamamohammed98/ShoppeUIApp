@@ -1,9 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shoppe_app/component/depart_list_item.dart';
 import 'package:shoppe_app/component/drawer_widget.dart';
 import 'package:shoppe_app/util/color.dart';
+import 'package:shoppe_app/util/custom_router.gr.dart';
 import 'package:shoppe_app/util/globale_data.dart';
 import 'package:shoppe_app/util/style.dart';
 
@@ -39,7 +41,6 @@ class ShoppeHomePage extends StatelessWidget {
                     dotSpacing: 15.0,
                     dotColor: colorBlue,
                     dotBgColor: colorWhite.withOpacity(0.0),
-                    borderRadius: true,
                     images: [
                       ExactAssetImage(
                           "assets/img/photo-1501066927591-314112b5888e.png"),
@@ -77,7 +78,9 @@ class ShoppeHomePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: colorGreen,
-        onPressed: () {},
+        onPressed: () {
+          ExtendedNavigator.root.push(Routes.shoppeAddNewAdds);
+        },
         child: Icon(
           Icons.add,
           color: colorWhite,

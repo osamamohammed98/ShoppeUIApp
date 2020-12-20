@@ -1,5 +1,5 @@
-class Message{
+class MessageUser{
   final String image , title , subtitle , time;
 
-  Message({this.image, this.title, this.subtitle, this.time});
+  MessageUser({this.image, this.title, this.subtitle, this.time});
 }

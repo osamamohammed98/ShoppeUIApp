@@ -5,6 +5,8 @@ import 'package:shoppe_app/component/drawer_list_item.dart';
 import 'package:shoppe_app/util/color.dart';
 import 'package:shoppe_app/util/custom_router.gr.dart';
 import 'package:shoppe_app/util/style.dart';
+import 'package:wave/config.dart';
+import 'package:wave/wave.dart';
 
 class DrawerWidget extends StatelessWidget {
   @override
@@ -92,6 +94,7 @@ class DrawerWidget extends StatelessWidget {
                   title: "المنتجات",
                   icon: "assets/svg/box.svg",
                   onClick: () {
+                    ExtendedNavigator.root.push(Routes.shoppeProductPage);
                     ExtendedNavigator.root.pop();
                   },
                   isLeading: true,
@@ -176,6 +179,7 @@ class DrawerWidget extends StatelessWidget {
                         ],
                       ),
                       Text(""),
+
                     ],
                   ),
                 ),

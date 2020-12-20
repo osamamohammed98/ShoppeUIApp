@@ -31,6 +31,7 @@ dependencies:
   auto_route: ^0.6.9
   flutter_svg:
   carousel_pro:
+  wave: ^0.1.0
 
 
 dev_dependencies:

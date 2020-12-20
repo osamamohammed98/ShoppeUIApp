@@ -34,7 +34,7 @@ class TextFieldWidget extends StatelessWidget {
               : GestureDetector(
                   onTap: fun,
                   child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: size.width * 0.010),
+                    margin: EdgeInsets.symmetric(horizontal: size.width * 0.025),
                     child: SvgPicture.asset(
                       icon,
                       height: size.height * 0.048,
