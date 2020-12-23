@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:shoppe_app/component/depart_list_item.dart';
 import 'package:shoppe_app/component/drawer_widget.dart';
 import 'package:shoppe_app/util/color.dart';
@@ -21,7 +22,7 @@ class ShoppeHomePage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: colorGreen,
         title: Text(
-          "الاقسام",
+          "${translator.translate("key30")}",//key30
           style: textAppBar,
         ),
       ),
@@ -57,7 +58,7 @@ class ShoppeHomePage extends StatelessWidget {
                         horizontal: size.width * 0.046,
                         vertical: size.height * 0.019),
                     child: Text(
-                      "الأقسام  الرئيسيه",
+                      "${translator.translate("key31")}",//key31
                       style: textMid.copyWith(
                           fontSize: 20, fontWeight: FontWeight.bold),
                     ),

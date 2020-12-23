@@ -1,13 +1,21 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:shoppe_app/util/color.dart';
 import 'package:shoppe_app/util/custom_router.dart';
 import 'package:shoppe_app/util/custom_router.gr.dart';
 import 'package:shoppe_app/view/intro_view.dart';
 
-void main() {
-  runApp(MyApp());
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await translator.init(
+    localeDefault: LocalizationDefaultType.device,
+    languagesList: <String>['ar', 'en'],
+    assetsDirectory: 'assets/langs/',
+    //apiKeyGoogle: '<Key>', // NOT YET TESTED
+  );
+  runApp(LocalizedApp(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -28,6 +36,9 @@ class MyApp extends StatelessWidget {
       ),
      /* home: IntroPage(),*/
       builder: ExtendedNavigator.builder<CustomRouter>(router: CustomRouter()),
+      localizationsDelegates: translator.delegates, // Android + iOS Delegates
+      locale: translator.locale, // Active locale
+    //  supportedLocales: translator.locals(),
     );
   }
 }

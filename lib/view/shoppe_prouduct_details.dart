@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:shoppe_app/util/color.dart';
 import 'package:shoppe_app/util/style.dart';
 
@@ -19,7 +20,7 @@ class ShoppeProductDetails extends StatelessWidget {
         centerTitle: true,
         backgroundColor: colorGreen,
         title: Text(
-          "تفاصيل المنتج ",
+          "${translator.translate("key46")}",//key46
           style: textAppBar,
         ),
       ),
@@ -41,7 +42,7 @@ class ShoppeProductDetails extends StatelessWidget {
                 onPressed: () {},
                 color: colorGreen,
                 child: Text(
-                  "د.ك" + " 5 ",
+                  "${translator.translate("key47")}",//key47
                   style: textMid.copyWith(color: colorWhite),
                 ),
               ),
@@ -52,14 +53,14 @@ class ShoppeProductDetails extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    "زهرة اللوتس ",
+                    "${translator.translate("key48")}",//key48
                     style: textMid.copyWith(color: colorBlack, fontSize: 17),
                   ),
                   SizedBox(
                     height: size.height * 0.018,
                   ),
-                  Text(
-                    "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص, الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق",
+                  Text(//key5
+                    "${translator.translate("key5")}",
                     overflow: TextOverflow.clip,
                     textAlign: TextAlign.end,
                     style: textNormal.copyWith(color: colorBlack, fontSize: 12),
@@ -71,7 +72,7 @@ class ShoppeProductDetails extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text(
-                        " مشتل نايف ",
+                        "${translator.translate("key49")}",//key49
                         style:
                             textMid.copyWith(color: colorBlack, fontSize: 15),
                       ),

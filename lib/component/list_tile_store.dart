@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:shoppe_app/util/color.dart';
 import 'package:shoppe_app/util/custom_router.gr.dart';
 import 'package:shoppe_app/util/style.dart';
@@ -35,7 +36,7 @@ class ListTileStore extends StatelessWidget {
           style: textNormal.copyWith(color: colorBlack),
         ),
         subtitle: Text(
-          "مثال لنص يمكن أن يستبدل",
+          translator.translate("key52"),//key52
           textAlign: TextAlign.end,
           style: textNormal.copyWith(color: colorBlack),
         ),

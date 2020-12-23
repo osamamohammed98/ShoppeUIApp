@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:shoppe_app/util/custom_router.gr.dart';
 import 'package:shoppe_app/util/style.dart';
 
@@ -34,7 +35,7 @@ class IntroPage extends StatelessWidget {
                       ExtendedNavigator.root.push(Routes.shoppeHomePage);
                     },
                     child: Text(
-                      "تخطي",
+                      "${translator.translate("key1")}",//key1
                       style: textBtn,
                     ),),
                 FlatButton(
@@ -42,7 +43,7 @@ class IntroPage extends StatelessWidget {
                       ExtendedNavigator.root.push(Routes.shoppeClintPage);
                     },
                     child: Text(
-                      "تسجيل",
+                      "${translator.translate("key2")}",//key2
                       style: textBtn,
                     ),),
               ],

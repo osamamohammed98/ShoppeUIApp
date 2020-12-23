@@ -31,8 +31,8 @@ dependencies:
   auto_route: ^0.6.9
   flutter_svg:
   carousel_pro:
-  wave: ^0.1.0
-
+  string_validator:
+  localize_and_translate:
 
 dev_dependencies:
   flutter_test:
@@ -54,6 +54,7 @@ flutter:
   assets:
     - assets/img/
     - assets/svg/
+    - assets/langs/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

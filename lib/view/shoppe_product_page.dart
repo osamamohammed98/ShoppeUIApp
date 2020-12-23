@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:shoppe_app/component/adds.dart';
 import 'package:shoppe_app/component/product_list_item.dart';
 import 'package:shoppe_app/util/color.dart';
@@ -22,7 +23,7 @@ class ShoppeProductPage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: colorGreen,
         title: Text(
-          "المتاجر ",
+          "${translator.translate("key32")}",//key32
           style: textAppBar,
         ),
       ),

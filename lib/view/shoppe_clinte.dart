@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:shoppe_app/component/circel_register_btn.dart';
 import 'package:shoppe_app/util/color.dart';
 import 'package:shoppe_app/util/custom_router.gr.dart';
@@ -17,7 +18,7 @@ class ShoppeClintPage extends StatelessWidget {
         backgroundColor: colorGreen,
         centerTitle: true,
         title: Text(
-          "التسجيل",
+          "${translator.translate("key20")}",//key20
           style: textAppBar,
         ),
       ),
@@ -32,11 +33,11 @@ class ShoppeClintPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    " مستخدم جديد",
+                    "${translator.translate("key21")}",//key21
                     style: textMid,
                   ),
                   Text(
-                    "يمكنك تسجيل عضوية مجاناً",
+                    "${translator.translate("key22")}",//key22
                     style: textNormal,
                   ),
                 ],

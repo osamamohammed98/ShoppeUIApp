@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:shoppe_app/util/color.dart';
 import 'package:shoppe_app/util/style.dart';
 class AddListItem extends StatelessWidget {
@@ -22,12 +23,12 @@ class AddListItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Text(
-            "مساحة اعلانية",
+            translator.translate("key56"),//key56
             textAlign: TextAlign.end,
             style: textNormal.copyWith(color: colorBlack),
           ),
           Text(
-            "نص يستبدل في نفس المساحة",
+            translator.translate("key57"),//key57
             textAlign: TextAlign.end,
             style: textNormal.copyWith(color: colorNormal ,fontSize: 10),
           ),

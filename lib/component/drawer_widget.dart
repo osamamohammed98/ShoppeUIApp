@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:shoppe_app/component/drawer_list_item.dart';
 import 'package:shoppe_app/util/color.dart';
 import 'package:shoppe_app/util/custom_router.gr.dart';
 import 'package:shoppe_app/util/style.dart';
-import 'package:wave/config.dart';
-import 'package:wave/wave.dart';
+
 
 class DrawerWidget extends StatelessWidget {
   @override
@@ -30,11 +30,11 @@ class DrawerWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "مشتل نايف الزراعي ",
+                      translator.translate("key59"),//key59
                       style: textMid.copyWith(color: colorWhite, fontSize: 16),
                     ),
                     Text(
-                      "مشتل",
+                      translator.translate("key60"),//key60
                       style: textMid.copyWith(fontSize: 14),
                     ),
                   ],
@@ -54,9 +54,15 @@ class DrawerWidget extends StatelessWidget {
               children: [
                 DrawerItemList(
                   orangText: "EN",
-                  title: "اللغه",
+                  title: translator.translate("key61"),//key61
                   icon: "assets/svg/language.svg",
                   onClick: () {
+                    translator.setNewLanguage(
+                      context,
+                      newLanguage: translator.currentLanguage == 'ar' ? 'en' : 'ar',
+                      remember: true,
+                      restart: true,
+                    );
                     ExtendedNavigator.root.pop();
                   },
                   isLeading: true,
@@ -66,7 +72,7 @@ class DrawerWidget extends StatelessWidget {
                   color: colorBlack,
                 ),
                 DrawerItemList(
-                  title: "الرسائل",
+                  title: translator.translate("key19"),//key19
                   icon: "assets/svg/folder.svg",
                   onClick: () {
                     ExtendedNavigator.root.push(Routes.shoppeMessagePage);
@@ -78,7 +84,7 @@ class DrawerWidget extends StatelessWidget {
                   color: colorBlack,
                 ),
                 DrawerItemList(
-                  title: "لوحة الاداره ",
+                  title: translator.translate("key62"),//key62
                   icon: "assets/svg/box.svg",
                   onClick: () {
                     ExtendedNavigator.of(context).push(Routes.shoppeProfileEdit);
@@ -91,7 +97,7 @@ class DrawerWidget extends StatelessWidget {
                 ),
                 DrawerItemList(
                   orangText: "20",
-                  title: "المنتجات",
+                  title: translator.translate("key63"),//key63
                   icon: "assets/svg/box.svg",
                   onClick: () {
                     ExtendedNavigator.root.push(Routes.shoppeProductPage);
@@ -104,7 +110,7 @@ class DrawerWidget extends StatelessWidget {
                   color: colorBlack,
                 ),
                 DrawerItemList(
-                  title: "اتصل بنا ",
+                  title: translator.translate("key24"),//key24
                   icon: "assets/svg/phone-call.svg",
                   onClick: () {
                     ExtendedNavigator.root.push(Routes.shoppeContactUs);
@@ -140,7 +146,7 @@ class DrawerWidget extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Text(
-                              "خروج",
+                              translator.translate("key64"),//key64
                               textAlign: TextAlign.end,
                               style: textMid.copyWith(fontSize: 18, fontWeight: FontWeight.bold),
                             ),
@@ -154,26 +160,30 @@ class DrawerWidget extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          InkWell(
-                            onTap:(){
-                              ExtendedNavigator.root.push(Routes.shoppeTermsConditions);
-                              ExtendedNavigator.root.pop();
-                            },
-                            child: Text(
-                              "الشروط والاحكام",
-                              textAlign: TextAlign.end,
-                              style: textMid.copyWith(fontSize: 18, fontWeight: FontWeight.bold),
+                          Expanded(
+                            child: InkWell(
+                              onTap:(){
+                                ExtendedNavigator.root.push(Routes.shoppeTermsConditions);
+                                ExtendedNavigator.root.pop();
+                              },
+                              child: Text(
+                                translator.translate("key23"),//key23
+                                textAlign: TextAlign.end,
+                                style: textMid.copyWith(fontSize: 18, fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ),
-                          InkWell(
-                            onTap: (){
-                              ExtendedNavigator.root.push(Routes.shoppeAboutUs);
-                              ExtendedNavigator.root.pop();
-                            },
-                            child: Text(
-                              "عن التطبيق",
-                              textAlign: TextAlign.end,
-                              style: textMid.copyWith(fontSize: 18, fontWeight: FontWeight.bold),
+                          Expanded(
+                            child: InkWell(
+                              onTap: (){
+                                ExtendedNavigator.root.push(Routes.shoppeAboutUs);
+                                ExtendedNavigator.root.pop();
+                              },
+                              child: Text(
+                                translator.translate("key3"),//key3
+                                textAlign: TextAlign.end,
+                                style: textMid.copyWith(fontSize: 18, fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ),
                         ],

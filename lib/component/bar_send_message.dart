@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:shoppe_app/util/color.dart';
 import 'package:shoppe_app/util/style.dart';
 //todo split it in custom file
@@ -34,7 +35,7 @@ class SendMessageBar extends StatelessWidget {
                       )),
                   contentPadding: EdgeInsets.only(
                       right: size.width * 0.080, top: size.width * 0.040),
-                  hintText: "قم بكتابة رسالتك هنا",
+                  hintText: translator.translate("key58"),//key58
                   border: InputBorder.none,
                   hintStyle: textHint,
                 ),

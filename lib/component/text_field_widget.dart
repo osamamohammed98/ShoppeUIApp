@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:shoppe_app/util/color.dart';
 import 'package:shoppe_app/util/style.dart';
 
@@ -9,6 +10,7 @@ class TextFieldWidget extends StatelessWidget {
   final String icon;
   final bool isObscureText;
   final Function fun;
+  final Function customValid;
 
   const TextFieldWidget({
     Key key,
@@ -16,7 +18,7 @@ class TextFieldWidget extends StatelessWidget {
     this.type,
     this.icon,
     this.isObscureText = false,
-    this.fun,
+    this.fun, this.customValid,
   }) : super(key: key);
 
   @override
@@ -24,10 +26,20 @@ class TextFieldWidget extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Container(
       margin: EdgeInsets.only(bottom: size.height * 0.008),
-      child: TextField(
+      child: TextFormField(
         keyboardType: type == null ? TextInputType.text : type,
         textAlign: TextAlign.end,
         obscureText: isObscureText,
+        validator: (value) {
+          if(value == null || value == ""){
+            return "${translator.translate("key11")}";//key11
+          }else if(customValid != null){
+            return customValid(value) ;
+          }else{
+            return null;
+          }
+        },
+
         decoration: InputDecoration(
           prefixIcon: icon == null
               ? null

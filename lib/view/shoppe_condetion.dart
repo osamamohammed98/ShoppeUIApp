@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:shoppe_app/util/color.dart';
 import 'package:shoppe_app/util/style.dart';
 
@@ -14,7 +15,7 @@ class ShoppeTermsConditions extends StatelessWidget {
         backgroundColor: colorGreen,
         centerTitle: true,
         title: Text(
-          "الشروط والاحكام",
+          "${translator.translate("key23")}",//key23
           style: textAppBar,
         ),
       ),
@@ -28,14 +29,14 @@ class ShoppeTermsConditions extends StatelessWidget {
               child: Image.asset("assets/img/logo.png"),
             ),
             Text(
-              "الشروط والاحكام",
+              "${translator.translate("key23")}",//key23
               style: textMid.copyWith(color: colorGreen, fontSize: 17),
             ),
             SizedBox(
               height: size.height * 0.018,
             ),
-            Text(
-              "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص, الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق",
+            Text(/*key 5*/
+              "${translator.translate("key5")}",
               overflow: TextOverflow.clip,
               textAlign: TextAlign.end,
               style: textNormal.copyWith(color: colorBlack, fontSize: 12),

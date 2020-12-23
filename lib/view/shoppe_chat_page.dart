@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:shoppe_app/component/bar_send_message.dart';
 import 'package:shoppe_app/component/he_message_body.dart';
 import 'package:shoppe_app/component/me_message_body.dart';
@@ -21,7 +22,7 @@ class ShoppeChatPage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: colorGreen,
         title: Text(
-          "الرسائل",
+          "${translator.translate("key19")}",//key19
           style: textAppBar,
         ),
       ),

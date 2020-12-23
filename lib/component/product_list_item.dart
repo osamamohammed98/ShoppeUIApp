@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:shoppe_app/util/color.dart';
 import 'package:shoppe_app/util/custom_router.gr.dart';
 import 'package:shoppe_app/util/style.dart';
@@ -51,12 +52,12 @@ class ProductListItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text(
-                        "لكزس 2018",
+                        translator.translate("key65"),//key65
                         style: textNormal.copyWith(
                             color: colorBlack, fontSize: 11),
                       ),
                       Text(
-                        "200" + "د.ك ",
+                        translator.translate("key66"),//key66
                         style: textNormal.copyWith(
                             color: colorOrange, fontSize: 11),
                       ),

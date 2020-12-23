@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:shoppe_app/component/list_tile_message.dart';
 import 'package:shoppe_app/util/color.dart';
 import 'package:shoppe_app/util/globale_data.dart';
@@ -17,7 +18,7 @@ class ShoppeMessagePage extends StatelessWidget {
         backgroundColor: colorGreen,
         centerTitle: true,
         title: Text(
-          "الرسائل",
+          "${translator.translate("key29")}",//key29
           style: textAppBar,
         ),
       ),
