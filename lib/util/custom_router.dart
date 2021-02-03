@@ -12,6 +12,7 @@ import 'package:shoppe_app/view/shoppe_mesaage_page.dart';
 import 'package:shoppe_app/view/shoppe_product_page.dart';
 import 'package:shoppe_app/view/shoppe_profile_edit_page.dart';
 import 'package:shoppe_app/view/shoppe_prouduct_details.dart';
+import 'package:shoppe_app/view/shoppe_sigin_page.dart';
 import 'package:shoppe_app/view/shoppe_store_page.dart';
 import 'package:shoppe_app/view/shoppe_user_registration.dart';
 import 'package:shoppe_app/view/store_registration_page.dart';
@@ -34,6 +35,7 @@ import 'package:shoppe_app/view/store_registration_page.dart';
     MaterialRoute(page: ShoppeProductDetails,),
     MaterialRoute(page: ShoppeChatPage,),
     MaterialRoute(page: ShoppeAddNewAdds,),
+    MaterialRoute(page: ShoppeLogInPage,),
   ],
 )
 class $CustomRouter{}

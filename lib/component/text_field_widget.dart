@@ -11,6 +11,7 @@ class TextFieldWidget extends StatelessWidget {
   final bool isObscureText;
   final Function fun;
   final Function customValid;
+  final TextEditingController controller;
 
   const TextFieldWidget({
     Key key,
@@ -18,7 +19,7 @@ class TextFieldWidget extends StatelessWidget {
     this.type,
     this.icon,
     this.isObscureText = false,
-    this.fun, this.customValid,
+    this.fun, this.customValid, this.controller,
   }) : super(key: key);
 
   @override
@@ -27,6 +28,7 @@ class TextFieldWidget extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: size.height * 0.008),
       child: TextFormField(
+        controller: controller,
         keyboardType: type == null ? TextInputType.text : type,
         textAlign: TextAlign.end,
         obscureText: isObscureText,

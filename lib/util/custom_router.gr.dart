@@ -21,6 +21,7 @@ import '../view/shoppe_mesaage_page.dart';
 import '../view/shoppe_product_page.dart';
 import '../view/shoppe_profile_edit_page.dart';
 import '../view/shoppe_prouduct_details.dart';
+import '../view/shoppe_sigin_page.dart';
 import '../view/shoppe_store_page.dart';
 import '../view/shoppe_user_registration.dart';
 import '../view/store_registration_page.dart';
@@ -41,6 +42,7 @@ class Routes {
   static const String shoppeProductDetails = '/shoppe-product-details';
   static const String shoppeChatPage = '/shoppe-chat-page';
   static const String shoppeAddNewAdds = '/shoppe-add-new-adds';
+  static const String shoppeLogInPage = '/shoppe-log-in-page';
   static const all = <String>{
     introPage,
     shoppeClintPage,
@@ -57,6 +59,7 @@ class Routes {
     shoppeProductDetails,
     shoppeChatPage,
     shoppeAddNewAdds,
+    shoppeLogInPage,
   };
 }
 
@@ -79,6 +82,7 @@ class CustomRouter extends RouterBase {
     RouteDef(Routes.shoppeProductDetails, page: ShoppeProductDetails),
     RouteDef(Routes.shoppeChatPage, page: ShoppeChatPage),
     RouteDef(Routes.shoppeAddNewAdds, page: ShoppeAddNewAdds),
+    RouteDef(Routes.shoppeLogInPage, page: ShoppeLogInPage),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -170,6 +174,12 @@ class CustomRouter extends RouterBase {
     ShoppeAddNewAdds: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => ShoppeAddNewAdds(),
+        settings: data,
+      );
+    },
+    ShoppeLogInPage: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => ShoppeLogInPage(),
         settings: data,
       );
     },

@@ -2,8 +2,10 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
+import 'package:shoppe_app/backend/server.dart';
 import 'package:shoppe_app/component/btn_widget.dart';
 import 'package:shoppe_app/component/text_field_widget.dart';
+import 'package:shoppe_app/data/user.dart';
 import 'package:shoppe_app/util/color.dart';
 import 'package:shoppe_app/util/custom_router.gr.dart';
 import 'package:shoppe_app/util/globale_data.dart';
@@ -15,15 +17,28 @@ class ShoppeUserRegistration extends StatefulWidget {
 }
 
 class _ShoppeUserRegistrationState extends State<ShoppeUserRegistration> {
-  GlobalKey<FormState> formKey = GlobalKey();
+  final formKey = GlobalKey<FormState>();
+  TextEditingController controllerUserName,
+      controllerPassword,
+      controllerEmail,
+      controllerPhone;
+
+  @override
+  initState() {
+    super.initState();
+    controllerUserName = TextEditingController();
+    controllerPassword = TextEditingController();
+    controllerEmail = TextEditingController();
+    controllerPhone = TextEditingController();
+  }
+
   ///TODO make this method in global data file and  pass it {GlobalKey && Routes.Name}
   validateForm() {
     bool isValid = formKey.currentState.validate();
-    if(isValid){
+    if (isValid) {
       formKey.currentState.save();
-      ExtendedNavigator.root
-          .push(Routes.shoppeHomePage);
-    }else{
+      saveUserData();
+    } else {
       return;
     }
   }
@@ -39,9 +54,16 @@ class _ShoppeUserRegistrationState extends State<ShoppeUserRegistration> {
         centerTitle: true,
         backgroundColor: colorGreen,
         title: Text(
-          "${translator.translate("key51")}",//key51
+          "${translator.translate("key51")}", //key51
           style: textAppBar,
         ),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.login),
+              onPressed: () {
+                ExtendedNavigator.root.push(Routes.shoppeLogInPage);
+              }),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -59,7 +81,7 @@ class _ShoppeUserRegistrationState extends State<ShoppeUserRegistration> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text(
-                        "${translator.translate("key51")}",//key51
+                        "${translator.translate("key51")}", //key51
                         style: textMid,
                       ),
                       SizedBox(
@@ -69,7 +91,7 @@ class _ShoppeUserRegistrationState extends State<ShoppeUserRegistration> {
                     ],
                   ),
                   Text(
-                    "${translator.translate("key52")}",//key52
+                    "${translator.translate("key52")}", //key52
                     style: textNormal,
                   ),
                 ],
@@ -90,23 +112,28 @@ class _ShoppeUserRegistrationState extends State<ShoppeUserRegistration> {
                       height: size.height * 0.137,
                     ),
                     TextFieldWidget(
-                      hint: "${translator.translate("key35")}",//key35
+                      hint: "${translator.translate("key35")}", //key35
                       type: TextInputType.text,
+                      controller: controllerUserName,
                     ),
                     TextFieldWidget(
-                      hint: "${translator.translate("key36")}",//key36
+                      hint: "${translator.translate("key36")}",
+                      //key36
                       type: TextInputType.visiblePassword,
                       isObscureText: true,
                       customValid: passwordValid,
+                      controller: controllerPassword,
                     ),
                     TextFieldWidget(
-                      hint: "${translator.translate("key53")}",//key53
+                      hint: "${translator.translate("key53")}", //key53
                       type: TextInputType.emailAddress,
                       customValid: emailValid,
+                      controller: controllerEmail,
                     ),
                     TextFieldWidget(
-                      hint: "${translator.translate("key26")}",//key26
+                      hint: "${translator.translate("key26")}", //key26
                       type: TextInputType.phone,
+                      controller: controllerPhone,
                     ),
                     SizedBox(
                       height: size.height * 0.074,
@@ -114,12 +141,11 @@ class _ShoppeUserRegistrationState extends State<ShoppeUserRegistration> {
                     BtnWidget(
                       width: 1.00,
                       color: colorGreen,
-                      text: "${translator.translate("key20")}",//key20
+                      text: "${translator.translate("key20")}", //key20
                       fun: () {
                         validateForm();
                       },
                     ),
-
                   ],
                 ),
               ),
@@ -128,5 +154,16 @@ class _ShoppeUserRegistrationState extends State<ShoppeUserRegistration> {
         ),
       ),
     );
+  }
+
+  void saveUserData() async {
+    AppUser appUser = AppUser.customerUser({
+      'userName': controllerUserName.text,
+      'email': controllerEmail.text,
+      'password': controllerPassword.text,
+      'mobileNumber': controllerPhone.text,
+    });
+
+    await saveUserInFirebase(appUser);
   }
 }

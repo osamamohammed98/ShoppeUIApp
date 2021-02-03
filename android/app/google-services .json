@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "647058284104",
+    "project_id": "mashtalflutter",
+    "storage_bucket": "mashtalflutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647058284104:android:1ba0cbfc04fa75e45ac27d",
+        "android_client_info": {
+          "package_name": "com.osama.m.dasoqi.shoppe_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "647058284104-gi63dvfhqcm5qq62vnrfu37gefh5ucit.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSUpuUeqf6j1xWJM3pF8bLEG5TuwkHDQk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "647058284104-gi63dvfhqcm5qq62vnrfu37gefh5ucit.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
